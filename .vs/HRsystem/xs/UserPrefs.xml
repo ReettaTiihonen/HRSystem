@@ -1,0 +1,32 @@
+﻿<Properties StartupConfiguration="{C0979E94-B798-4ED9-8B9B-BB268F88A133}|Default">
+  <Xamarin.Addins.Core.Project ActiveDebugTarget="MyAppleMacCatalystID" />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MultiItemStartupConfigurations />
+  <MonoDevelop.Ide.Workbench ActiveDocument="HRsystem/Information.xaml.cs">
+    <Files>
+      <File FileName="HRsystem/Information.xaml" Line="7" Column="1" />
+      <File FileName="HRsystem/Information.xaml.cs" Line="1" Column="1" />
+      <File FileName="HRsystem/PersonInfo.cs" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="HRsystem" expanded="True">
+            <Node name="HRsystem" expanded="True">
+              <Node name="AppShell.xaml" expanded="True" />
+              <Node name="Information.xaml" expanded="True">
+                <Node name="Information.xaml.cs" selected="True" />
+              </Node>
+              <Node name="MainPage.xaml" expanded="True" />
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.ItemProperties.HRsystem PreferredExecutionTarget="MyAppleMacCatalystID" />
+</Properties>

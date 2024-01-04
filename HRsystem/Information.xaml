@@ -1,0 +1,89 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="HRsystem.Information"
+             Title="Information">
+    <VerticalStackLayout>
+
+            <!--Lisätään kohdat joihin syötetään henkilöiden ja toimisuhteen tiedot-->
+            <StackLayout Orientation="Vertical" Padding="10" Spacing="10">
+                <Label Text="HENKILÖTIEDOT" FontSize="40" TextColor="Black"/>
+                <Label Text="Etunimet" FontSize="20" TextColor="Black"/>
+                <Entry x:Name="FirstNamesEntry" TextChanged="FirstNamesEntry_TextChanged" WidthRequest="300"/>
+                <Label Text="Sukunimi" FontSize="20" TextColor="Black"/>
+                <Entry x:Name="LastNameEntry" TextChanged="FirstNamesEntry_TextChanged" WidthRequest="300"/>
+                <Label Text="Kutsumanimi" FontSize="20" TextColor="Black"/>
+                <Entry x:Name="NickNameEntry" TextChanged="FirstNamesEntry_TextChanged" WidthRequest="300"/>
+                <Label Text="Henkilötunnus" FontSize="20" TextColor="Black"/>
+                <Entry x:Name="HetuEntry" TextChanged="FirstNamesEntry_TextChanged" WidthRequest="200"/>
+                <Label Text="Kotiosoite" FontSize="20" TextColor="Black"/> 
+                <StackLayout Orientation="Horizontal" Padding="10" HorizontalOptions="CenterAndExpand" Spacing="10">              
+                    <Entry x:Name="StreetEntry" TextChanged="FirstNamesEntry_TextChanged" WidthRequest="250"/>
+                    <Entry x:Name="MailNumberEntry" TextChanged="MailNumberEntry_TextChanged" WidthRequest="100"/>
+                    <Entry x:Name="LocationEntry" TextChanged="FirstNamesEntry_TextChanged" WidthRequest="150"/>
+                </StackLayout>
+                <Label Text="TOIMISUHTEEN TIEDOT" FontSize="40" TextColor="Black"/>
+                <Label Text="Alkamispäivä" FontSize="20" TextColor="Black"/>
+                <DatePicker x:Name="StartPicker" VerticalOptions="CenterAndExpand">
+                <DatePicker.Format>yyyy-MM-dd</DatePicker.Format>
+                </DatePicker>
+                <Label Text="Päättymispäivä" FontSize="20" TextColor="Black"/>
+                <DatePicker x:Name="EndPicker" DateSelected="EndPicker_DateSelected" VerticalOptions="CenterAndExpand">
+                <DatePicker.Format>yyyy-MM-dd</DatePicker.Format>
+                </DatePicker>
+                <Label Text="Nimike" FontSize="20" TextColor="Black"/>
+                <Entry x:Name="JobTitleEntry" TextChanged="FirstNamesEntry_TextChanged" WidthRequest="300"/>
+                <Label Text="Yksikkö" FontSize="20" TextColor="black"/>
+                <Entry x:Name="UnitEntry" TextChanged="FirstNamesEntry_TextChanged" WidthRequest="300"/>
+            <StackLayout HorizontalOptions="CenterAndExpand" Orientation="Horizontal" Spacing="10">
+                <Button x:Name="Savebutton" Text="Tallenna tiedot" Clicked="Savebutton_Clicked" WidthRequest="200"/>
+                <Button x:Name="DeleteButton" Text="Poista" Clicked="DeleteButton_Clicked" WidthRequest="200"/>
+            </StackLayout>
+            <StackLayout Orientation="Horizontal" Spacing="10">
+                <Label Text="Järjestä lista : " FontSize="20" TextColor="Black"/>
+                <Button x:Name="SotrByNi" Text="Kutsumanimi" Clicked="SotrByNi_Clicked" WidthRequest="200"/>
+                <Button x:Name="SortByLa" Text="Sukunimi" Clicked="SortByLa_Clicked" WidthRequest="200"/>
+                <Button x:Name="SortByJo" Text="Nimike" Clicked="SortByJo_Clicked" WidthRequest="200"/>
+            </StackLayout>
+            <Border Stroke="Black"
+                    StrokeThickness="4"
+                    StrokeShape="RoundRectangle 40,0,0,40"
+                    Padding="16,8"
+                    HorizontalOptions="Center">
+            <ListView x:Name="PersonList"
+                      ItemsSource="{Binding Persons}"
+                      ItemSelected="PersonList_ItemSelected"
+                      MinimumHeightRequest="200">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <StackLayout Orientation="Horizontal" Spacing="10">
+                                <Label Padding="10"
+                                       Text="{Binding Names}"
+                                       TextColor="Black"
+                                       FontSize="20"
+                                       HorizontalOptions="StartAndExpand"/>
+                                <Label Padding="10"
+                                       Text="{Binding LastName}"
+                                       TextColor="Black"
+                                       FontSize="20"
+                                       HorizontalOptions="StartAndExpand"/>
+                                <Label Padding="10"
+                                       Text="{Binding NickName}"
+                                       TextColor="Black"
+                                       FontSize="20"
+                                       HorizontalOptions="StartAndExpand"/>
+                                <Label Padding="10"
+                                       Text="{Binding JobTitle}"
+                                       TextColor="Black"
+                                       FontSize="20"
+                                       HorizontalOptions="StartAndExpand"/>
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+            </Border>
+            </StackLayout>
+    </VerticalStackLayout>
+</ContentPage>
